@@ -40,6 +40,27 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'Vendor' => [
+            'driver' => 'session',
+            'provider' => 'vendors',
+        ],
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+        ],
+        'api-admin' => [
+            'driver' => 'jwt',
+            'provider' => 'adminsapi',
+        ],
+        'api-user' => [
+            'driver' => 'jwt',
+            'provider' => 'userssapi',
+        ],
+        
     ],
 
     /*
@@ -64,7 +85,25 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'vendors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Vendor::class,
+        ],
+        'adminsapi' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
 
+        'userssapi' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+        
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
